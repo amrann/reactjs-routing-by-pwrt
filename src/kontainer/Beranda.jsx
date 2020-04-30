@@ -8,6 +8,7 @@ import BlogPost from './halaman/BlogPost';
 import Yutup from './halaman/Yutup';
 // Style
 import './Beranda.css';
+import Post_Detail from './halaman/Post_Detail';
 
 class Beranda extends Component {
     render(){
@@ -22,6 +23,7 @@ class Beranda extends Component {
                     </div>
                     <Route path="/" exact component={BlogPost}/>
                     {/* tanpa props 'exact' disini, setiap penggunaan '/' akan memanggil halaman Blogpost */}
+                    <Route path="/detailpost/:idPost" component={Post_Detail}/>
                     <Route path="/produk" component={Produk}/>
                     <Route path="/laifsaikel" component={LifeCycleKomponen}/>
                     <Route path="/youtube" component={Yutup}/>

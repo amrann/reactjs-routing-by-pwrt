@@ -40,6 +40,10 @@
     margin-bottom: 16px;
 }
 
+.content p.title:hover{
+    cursor: pointer;
+}
+
 .content p.desc {
     margin: 0px;
     font-size: 16px;
@@ -55,9 +59,11 @@
     margin-top: 10px;
 }
 
-.bHapus:hover, .bEdit:hover {
+.bHapus:hover, .bEdit:hover{
     cursor: pointer;
 }
+
+
 
 .bEdit {
     padding: 7px 9px;

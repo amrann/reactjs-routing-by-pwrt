@@ -24,10 +24,10 @@ class Produk extends Component{
                 <hr/>
                 <div className="header">
                     <div className="logo">
-                        <img src="https://etanee.id/img/content/img_logo_etanee_white.svg"/>
+                        <img src="https://etanee.id/img/content/img_logo_etanee_white.svg" alt=""/>
                     </div>
                     <div className="troley">
-                        <img src="https://etanee.id/img/icon/ic_cart_white.svg" />
+                        <img src="https://etanee.id/img/icon/ic_cart_white.svg" alt=""/>
                         <div className="count">{this.state.pesan}</div>
                     </div>
                 </div>

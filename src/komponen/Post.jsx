@@ -37,15 +37,15 @@ import React from 'react';
 const Post = (props) => { 
     return (
         <div className="post">
-            <div className="img-thumb">
-                <img src="http://placeimg.com/200/150/tech"/>
+            <div className="img-thumb" style={{width: '200px'}}>
+                <img src="http://placeimg.com/200/150/tech" alt="" />
             </div>
             <div className="content">
-                <p className="title">{props.dtitlebody.title}</p>
+                <p className="title" onClick={() => props.clickTitle(props.dtitlebody.id)}>{props.dtitlebody.title}</p>
                 <p className="desc">{props.dtitlebody.body}</p>
-                <button className="bEdit" onClick={()=>props.clickEdit(props.dtitlebody)}>Edit</button>
+                <button className="bEdit" onClick={() => props.clickEdit(props.dtitlebody)}>Edit</button>
                 {/* data yang ingin diperlukan bukan cuman 'id' maka dari itu param yg digunakan adalah props.dtitlebody */}
-                <button className="bHapus" onClick={()=>props.clickHapus(props.dtitlebody.id)}>Hapus</button>
+                <button className="bHapus" onClick={() => props.clickHapus(props.dtitlebody.id)}>Hapus</button>
             </div>
         </div>
     )

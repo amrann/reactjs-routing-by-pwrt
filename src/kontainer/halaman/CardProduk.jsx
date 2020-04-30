@@ -51,7 +51,7 @@ class CardProduk extends Component{
         return(
             <div className="card">
                 <div className="img-thumb-prod">
-                    <img src={YamBumbu}/>
+                    <img src={YamBumbu} alt=""/>
                 </div>
                 <p className="product-title">Daging Ayam Bumbu</p>
                 <p className="product-price">Rp 410,000</p>

@@ -1,22 +1,5 @@
 import React, {Component, Fragment} from 'react';
 
-// // Video #10
-// import './BlogPost.css';
-// import Post from '../komponen/Post'
-// class BlogPost extends Component{    
-//     render(){
-//         return(
-//             <Fragment>
-//                 <p className="section-title">Blog Post</p>
-//                 <Post title="title" desc="deskripsi"/>
-//             </Fragment>
-//         )
-//     }
-// }
-// export default BlogPost;
-// // end-Video #10
-
-// Video #11
 import './BlogPost.css';
 import Post from '../../komponen/Post';
 import axios from 'axios';
@@ -53,7 +36,10 @@ class BlogPost extends Component{
         //     })
         // })
 
-        // Video ke-12
+    // }
+    
+
+    panggilGetPostAPI = () => {
         /*
         Menggunakan json-server (https://github.com/typicode/json-server) utk melihat perubahan post/put/delete
         Cara penggunaannya:
@@ -61,35 +47,7 @@ class BlogPost extends Component{
         - buatkan file json (project ini filenya databes.json)
         - jalankan server tersebut pada terminal baru : json-server --watch databes.json --port 3004 (perlu menggunakan port baru karena port 3000 sdh digunakan untk menjalankan react-nya
         */
-        // axios.get('http://localhost:3004/posts') // link yg digunakan merupakan link json-server
-        // .then((hasil)=> {
-        //     // console.log(hasil);
-        //     this.setState({
-        //         postingan: hasil.data
-        //     })
-        // })
-        // end-Video ke-12
-
-    // }
-    
-    // render(){
-    //     return(
-    //         <Fragment>
-    //             <p className="section-title">Blog Post</p>
-    //             {
-    //                 // map disni berfungsi sebagai looping
-    //                 this.state.postingan.map(postingan => {
-    //                     return <Post key={postingan.id} title={postingan.title} desc={postingan.body}/>
-    //                     //perlu utk memberikan 'key' tidak terjadi warning pada console browser kita
-    //                 })
-    //             }
-    //         </Fragment>
-    //     )
-    // }
-
-    // Video #13
-    panggilGetPostAPI = () => {
-        axios.get('http://localhost:3004/inidataposts?_sort=id&_order=desc')
+        axios.get('http://localhost:3004/inidataposts?_sort=id&_order=desc') // link yg digunakan merupakan link json-server
         .then((hasil)=> {
             // console.log(hasil);
             this.setState({
@@ -155,6 +113,12 @@ class BlogPost extends Component{
         
     }
 
+    handleClickTitle = (param_id) => {
+        // this.props.history.push merupakan bawaan react yang berfungsi utk berpindah halaman
+        // fungsinya sama seperti '<Link> </Link>', cuman 'Link' tidak dapat digunakan dalam method
+        this.props.history.push(`/detailpost/${param_id}`);
+    }
+
     // Method ini berfungsi disaat form terjadi perubahan atau mempunyai inputan, sehingga dengan cara seperti itulah kita bisa mendapatkan value pada form-nya
     handlePerubahanForm = (event) => {
         // console.log('form change', event)
@@ -201,14 +165,12 @@ class BlogPost extends Component{
                 {
                     // map disni berfungsi sebagai looping
                     this.state.postingan.map(postingan => {
-                        return <Post key={postingan.id} dtitlebody={postingan} clickHapus={this.handleClickHapus} clickEdit={this.handleClickEdit}/>
+                        return <Post key={postingan.id} dtitlebody={postingan} clickHapus={this.handleClickHapus} clickEdit={this.handleClickEdit} clickTitle={this.handleClickTitle}/>
                         //perlu utk memberikan 'key' agar tidak terjadi warning pada console browser kita
                     })
                 }
             </Fragment>
         )
     }
-    // Video #13
 }
 export default BlogPost;
-// end-Video #11

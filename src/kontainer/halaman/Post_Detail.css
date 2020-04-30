@@ -1,0 +1,14 @@
+.p_post_detail {
+    padding: 20px;
+}
+.post_detail_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: blueviolet;
+    text-transform: capitalize;
+}
+
+.post_detail_body {
+    font-size: 16px;
+    color: blue;
+}
