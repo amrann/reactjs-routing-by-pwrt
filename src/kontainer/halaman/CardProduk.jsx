@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 // Video #7
-import YamBumbu from '../assets/ayam-bumbu-padang.jpg'
+import YamBumbu from '../../assets/ayam-bumbu-padang.jpg'
 
 class CardProduk extends Component{
     state = {

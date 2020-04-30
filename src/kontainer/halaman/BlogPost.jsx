@@ -18,7 +18,7 @@ import React, {Component, Fragment} from 'react';
 
 // Video #11
 import './BlogPost.css';
-import Post from '../komponen/Post';
+import Post from '../../komponen/Post';
 import axios from 'axios';
 class BlogPost extends Component{    
     state = {
