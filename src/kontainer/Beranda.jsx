@@ -2,7 +2,7 @@
 import React, {Component, Fragment} from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 // Halaman
-import Produk from './halaman/Produk';
+import Produk from './halaman/produk/Produk';
 import LifeCycleKomponen from './halaman/LifeCycleKomponen';
 import BlogPost from './halaman/BlogPost';
 import Yutup from './halaman/Yutup';

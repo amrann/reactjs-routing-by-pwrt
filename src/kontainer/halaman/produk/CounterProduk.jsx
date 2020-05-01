@@ -1,9 +1,7 @@
+// Libraries
 import React, {Component} from 'react';
 
-// Video #7
-import YamBumbu from '../../assets/ayam-bumbu-padang.jpg'
-
-class CardProduk extends Component{
+class CounterProduk extends Component {
     state = {
         // State ini berfungsi utk merender nilai yang berubah-ubah
         // kata 'state' merupakan bawaan dari react, jadi jangan diubah
@@ -46,24 +44,15 @@ class CardProduk extends Component{
             })
         }
     }
-
+    
     render(){
         return(
-            <div className="card">
-                <div className="img-thumb-prod">
-                    <img src={YamBumbu} alt=""/>
-                </div>
-                <p className="product-title">Daging Ayam Bumbu</p>
-                <p className="product-price">Rp 410,000</p>
-                <div className="counter">
-                    <button className="minus" onClick={this.hendelMinus}> - </button>
-                    <input type="text" value={this.state.pesan}/>
-                    <button className="plus" onClick={this.hendelPlus}> + </button>
-                </div>
+            <div className="counter">
+                <button className="minus" onClick={this.hendelMinus}> - </button>
+                <input type="text" value={this.state.pesan}/>
+                <button className="plus" onClick={this.hendelPlus}> + </button>
             </div>
-        )
+        ) 
     }
 }
-
-export default CardProduk;
-// end-Video #7
+export default CounterProduk;
