@@ -45,6 +45,7 @@ const rootReducer = (state = inisialState, action) => {
 
 
 // Perlu membuat Store
+// Tempat penyimpan state yang paling tinggi
 const store = buatStore(rootReducer);
 console.log(store.getState()); // running with 'node iniRedux.js'
 
@@ -59,6 +60,7 @@ store.subscribe(() => {
 // Perlu membuat Dispatching Action 
 // Disini proses pemanggilan instruksi Reducer
 // Misalkan Reducer punya fitur untuk menambah nilai value Store, maka pada Dispatching Action ini yang memberikan instruksi kepada Reducer, "Tolong tambahkan nilai pada value Store"
+// Ketika redux digabungkan dgn react-js, maka bagian dispatching disimpan pada bagian komponen yang memanggil sebuah perubahan
 store.dispatch({type: 'ADD_AGE'})
 store.dispatch({type: 'CHANGE_VALUE', angkaBaru: 10})
 console.log(store.getState());

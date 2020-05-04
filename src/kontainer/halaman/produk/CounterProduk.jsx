@@ -1,12 +1,13 @@
 // Libraries
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class CounterProduk extends Component {
-    state = {
-        // State ini berfungsi utk merender nilai yang berubah-ubah
-        // kata 'state' merupakan bawaan dari react, jadi jangan diubah
-        pesan : 4      
-    }
+    // state = {
+    //     // State ini berfungsi utk merender nilai yang berubah-ubah
+    //     // kata 'state' merupakan bawaan dari react, jadi jangan diubah
+    //     pesan : 4      
+    // }
 
     hendelCounterChangeChild = (nilaiBaru) => {
         this.props.onKaunterChange(nilaiBaru);
@@ -49,10 +50,20 @@ class CounterProduk extends Component {
         return(
             <div className="counter">
                 <button className="minus" onClick={this.hendelMinus}> - </button>
-                <input type="text" value={this.state.pesan}/>
+                <input type="text" value={this.props.pesan}/>
                 <button className="plus" onClick={this.hendelPlus}> + </button>
             </div>
         ) 
     }
 }
-export default CounterProduk;
+
+// memanggil state global (berada pada file index.js), dan merubah menjadi props
+const mapStateToProps = (state) => {
+    return {
+        pesan: state.totalPesanan
+    }
+}
+// export default CounterProduk;
+
+// param ke-1 merupakan global state sedangkan ke-2 yaitu dispatching
+export default connect(mapStateToProps)(CounterProduk);
