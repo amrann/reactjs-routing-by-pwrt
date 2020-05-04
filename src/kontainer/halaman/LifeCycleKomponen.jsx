@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react';
+import {connect} from 'react-redux';
 
 // Video #8
 import './LifeCycleKomponen.css';
@@ -44,9 +45,17 @@ class LifeCycleKomponen extends Component{
                 <p>Lifecycle Komponen</p>
                 <hr/>
                 <button className="btn">Component Button {this.state.hitung}</button>
+                <hr/>
+        <p>Total Pesan: {this.props.pesan}</p>
             </Fragment>
         )
     }
 }
-export default LifeCycleKomponen;
-// end-Video #8
+// export default LifeCycleKomponen;
+
+const mapStateToProps = (state) => {
+    return {
+        pesan: state.totalPesanan
+    }
+}
+export default connect(mapStateToProps)(LifeCycleKomponen);

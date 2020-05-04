@@ -1,3 +1,5 @@
+// File ini sudah menggunakan Redux
+
 // Libraries
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
@@ -47,11 +49,17 @@ class CounterProduk extends Component {
     }
     
     render(){
+        console.log(this.props);
         return(
             <div className="counter">
-                <button className="minus" onClick={this.hendelMinus}> - </button>
+                {/* Sebelum penggunaan Redux */}
+                {/* <button className="minus" onClick={this.hendelMinus}> - </button>
+                <input type="text" value={this.state.pesan}/>
+                <button className="plus" onClick={this.hendelPlus}> + </button> */}
+
+                <button className="minus" onClick={this.props.reduxHendelMinus}> - </button>
                 <input type="text" value={this.props.pesan}/>
-                <button className="plus" onClick={this.hendelPlus}> + </button>
+                <button className="plus" onClick={this.props.reduxHendelPlus}> + </button>
             </div>
         ) 
     }
@@ -63,7 +71,14 @@ const mapStateToProps = (state) => {
         pesan: state.totalPesanan
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        reduxHendelPlus: () => dispatch({type: 'tambah'}),
+        reduxHendelMinus: () => dispatch({type: 'kurang'}),
+    }
+}
 // export default CounterProduk;
 
-// param ke-1 merupakan global state sedangkan ke-2 yaitu dispatching
-export default connect(mapStateToProps)(CounterProduk);
+// connect memiliki 2 paaram, param ke-1 merupakan global state sedangkan ke-2 yaitu dispatching
+export default connect(mapStateToProps, mapDispatchToProps)(CounterProduk);

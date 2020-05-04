@@ -14,7 +14,8 @@ class CardProduk extends Component{
                 </div>
                 <p className="product-title">Daging Ayam Bumbu</p>
                 <p className="product-price">Rp 410,000</p>
-                <CounterProduk onKaunterChange = {(nilai)=>this.props.onKaunterChange(nilai)}/>               
+                {/* <CounterProduk onKaunterChange = {(nilai)=>this.props.onKaunterChange(nilai)}/> */}
+                <CounterProduk />          
             </div>
         )
     }

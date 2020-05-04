@@ -14,6 +14,22 @@ const globalState = {
 
 // Reducer
 const rootReducer = (state = globalState, action) => {
+  if(action.type === 'tambah'){
+    return {
+        ...state, // teknik mutable
+        totalPesanan: state.totalPesanan + 1
+    }
+  }
+  if(action.type === 'kurang'){
+      // kondisi ini diperuntukkan untuk menghindari terjadinya kondisi minus
+      if(state.totalPesanan > 0){
+        return {
+          ...state, // teknik mutable
+          totalPesanan: state.totalPesanan - 1
+        }
+      }
+      
+  }
   return state;
 }
 
