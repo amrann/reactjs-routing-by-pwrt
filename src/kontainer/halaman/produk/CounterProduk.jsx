@@ -3,6 +3,7 @@
 // Libraries
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import EksionType from '../../../reduks/reducer/kumpulanActionType';
 
 class CounterProduk extends Component {
     // state = {
@@ -74,8 +75,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        reduxHendelPlus: () => dispatch({type: 'tambah'}),
-        reduxHendelMinus: () => dispatch({type: 'kurang'}),
+        // reduxHendelPlus: () => dispatch({type: 'TAMBAH'}),
+        // reduxHendelMinus: () => dispatch({type: 'KURANG'}),
+        reduxHendelPlus: () => dispatch({type: EksionType.TAMBAH}),
+        reduxHendelMinus: () => dispatch({type: EksionType.KURANG}),
     }
 }
 // export default CounterProduk;
